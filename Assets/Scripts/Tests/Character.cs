@@ -4,6 +4,7 @@ public class Character
 {
     private int _currentHp;
 
+    // todo : use _currentHp = 100;
     public Character(int initHp)
     {
         _currentHp = initHp;
@@ -14,6 +15,7 @@ public class Character
         return _currentHp;
     }
 
+    // todo : inline variable
     public void TakeDamage(int damage)
     {
         var calculatedHp = _currentHp - damage;
