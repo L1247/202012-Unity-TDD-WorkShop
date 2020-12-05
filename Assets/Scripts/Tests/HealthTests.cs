@@ -27,6 +27,13 @@ public class HealthTests
         HpShouldBe(90);
     }
 
+    [Test]
+    public void Hp0WhenTakeDamage200()
+    {
+        _character.TakeDamage(200);
+        HpShouldBe(0);
+    }
+
     private void HpShouldBe(int expected)
     {
         Assert.AreEqual(expected , _character.GetHp());

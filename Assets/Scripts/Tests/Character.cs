@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Character
 {
     private int _currentHp;
@@ -14,6 +16,7 @@ public class Character
 
     public void TakeDamage(int damage)
     {
-        _currentHp -= damage;
+        var calculatedHp = _currentHp - damage;
+        _currentHp = Mathf.Clamp(calculatedHp , 0 , 100);
     }
 }
