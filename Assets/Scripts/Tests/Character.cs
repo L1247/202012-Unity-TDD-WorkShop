@@ -17,16 +17,16 @@ public class Character
     public void TakeDamage(int damage)
     {
         var calculatedHp = _currentHp - damage;
-        _currentHp = Mathf.Clamp(calculatedHp , 0 , 100);
+        ClampHpMin0Max100(calculatedHp);
     }
 
     public void Heal(int hp)
     {
-        _currentHp += hp;
+        var calculatedHp = _currentHp + hp;
+        ClampHpMin0Max100(calculatedHp);
     }
 
-    public void SetHp(int hp)
-    {
-        _currentHp = hp;
-    }
+    private void ClampHpMin0Max100(int calculatedHp) => _currentHp = Mathf.Clamp(calculatedHp , 0 , 100);
+
+    public void SetHp(int hp) => _currentHp = hp;
 }

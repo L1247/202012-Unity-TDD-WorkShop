@@ -42,6 +42,14 @@ public class HealthTests
         HpShouldBe(100);
     }
 
+    [Test]
+    public void Given_Hp90_When_Heal100_Then_Hp100()
+    {
+        SetHp(90);
+        Heal(100);
+        HpShouldBe(100);
+    }
+
     private void TakeDamage(int damage) => _character.TakeDamage(damage);
 
     private void Heal(int hp) => _character.Heal(hp);
