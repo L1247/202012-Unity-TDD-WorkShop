@@ -17,13 +17,18 @@ public class HealthTests
     [Test]
     public void Hp100WhenCharacterNew()
     {
-        Assert.AreEqual(100 , _character.GetHp());
+        HpShouldBe(100);
     }
 
     [Test]
     public void Hp90WhenTakeDamage10()
     {
         _character.TakeDamage(10);
-        Assert.AreEqual(90 , _character.GetHp());
+        HpShouldBe(90);
+    }
+
+    private void HpShouldBe(int expected)
+    {
+        Assert.AreEqual(expected , _character.GetHp());
     }
 }
