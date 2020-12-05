@@ -19,4 +19,14 @@ public class Character
         var calculatedHp = _currentHp - damage;
         _currentHp = Mathf.Clamp(calculatedHp , 0 , 100);
     }
+
+    public void Heal(int hp)
+    {
+        _currentHp += hp;
+    }
+
+    public void SetHp(int hp)
+    {
+        _currentHp = hp;
+    }
 }

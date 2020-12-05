@@ -34,6 +34,14 @@ public class HealthTests
         HpShouldBe(0);
     }
 
+    [Test]
+    public void Given_Hp90_When_Heal10_Then_Hp100()
+    {
+        _character.SetHp(90);
+        _character.Heal(10);
+        HpShouldBe(100);
+    }
+
     private void HpShouldBe(int expected)
     {
         Assert.AreEqual(expected , _character.GetHp());
