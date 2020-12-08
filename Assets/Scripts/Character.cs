@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Character
 {
-    private IntReactiveProperty CurrentHp;
+    public IntReactiveProperty CurrentHp;
 
     public Character(int initHp)
     {
