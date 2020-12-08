@@ -1,19 +1,34 @@
-using UniRx;
 using UnityEngine;
 
 public class Character
 {
-    private IntReactiveProperty CurrentHp;
+    private int _currentHp;
 
-    public Character(int initHp) => CurrentHp = new IntReactiveProperty(initHp);
+    // todo : use _currentHp = 100;
+    public Character(int initHp)
+    {
+        _currentHp = initHp;
+    }
 
-    public int GetHp() => CurrentHp.Value;
+    public int GetHp()
+    {
+        return _currentHp;
+    }
 
-    public void TakeDamage(int damage) => ClampHpMin0Max100(CurrentHp.Value - damage);
+    // todo : inline variable
+    public void TakeDamage(int damage)
+    {
+        var calculatedHp = _currentHp - damage;
+        ClampHpMin0Max100(calculatedHp);
+    }
 
-    public void Heal(int hp) => ClampHpMin0Max100(CurrentHp.Value + hp);
+    public void Heal(int hp)
+    {
+        var calculatedHp = _currentHp + hp;
+        ClampHpMin0Max100(calculatedHp);
+    }
 
-    private void ClampHpMin0Max100(int calculatedHp) => CurrentHp.Value = Mathf.Clamp(calculatedHp , 0 , 100);
+    private void ClampHpMin0Max100(int calculatedHp) => _currentHp = Mathf.Clamp(calculatedHp , 0 , 100);
 
-    public void SetHp(int hp) => CurrentHp.Value = hp;
+    public void SetHp(int hp) => _currentHp = hp;
 }
