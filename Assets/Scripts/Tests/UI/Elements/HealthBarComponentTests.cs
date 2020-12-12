@@ -35,7 +35,7 @@ namespace Tests.UI.Elements
         [Test]
         public void GetMax()
         {
-            _healthBarComponent.SetMax(_max);
+            SetMax();
             var healthBarMax = _healthBarComponent.GetMax();
             Assert.AreEqual(_max , healthBarMax);
         }
@@ -43,11 +43,13 @@ namespace Tests.UI.Elements
         [Test]
         public void GetFillAmount()
         {
-            _healthBarComponent.SetMax(_max);
+            SetMax();
             _healthBarComponent.SetCurrentValue(50);
             var amount = _healthBarComponent.GetAmount();
             Assert.AreEqual(0.5f , amount);
         }
+
+        private void SetMax() => _healthBarComponent.SetMax(_max);
 
     #endregion
     }
