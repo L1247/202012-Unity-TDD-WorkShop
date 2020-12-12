@@ -1517,7 +1517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf60859140494064b32414361b8b2d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _imageHealthBar: {fileID: 2050434814}
-  _imageCircleHealthBar: {fileID: 2059635863}
-  _buttonHurt: {fileID: 844982428}
-  _buttonHeal: {fileID: 204062121}
+  imageHealthBar: {fileID: 2050434814}
+  imageCircleHealthBar: {fileID: 2059635863}
+  buttonHurt: {fileID: 844982428}
+  buttonHeal: {fileID: 204062121}

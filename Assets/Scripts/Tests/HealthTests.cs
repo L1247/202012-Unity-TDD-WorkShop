@@ -1,5 +1,6 @@
 #region
 
+using Core.Character;
 using NUnit.Framework;
 
 #endregion
