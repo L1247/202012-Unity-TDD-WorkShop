@@ -6,20 +6,20 @@ namespace Core.UI.Elements
     {
     #region Private Variables
 
-        private int _max;
-        private int _value;
+        public int MAX   { get; private set; }
+        public int Value { get; private set; }
 
     #endregion
 
     #region Public Methods
 
-        public float GetAmount() => _value / (float)_max;
+        public float GetAmount() => Value / (float)MAX;
 
-        public int GetMax() => _max;
+        public int GetMax() => MAX;
 
-        public void SetCurrentValue(int value) => _value = value;
+        public void SetCurrentValue(int value) => Value = value;
 
-        public void SetMax(int amount) => _max = amount;
+        public void SetMax(int amount) => MAX = amount;
 
     #endregion
     }
