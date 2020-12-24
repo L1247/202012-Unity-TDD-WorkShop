@@ -1,25 +1,31 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Core.UI.Elements
 {
+    [Serializable]
     public class HealthBarComponent : MonoBehaviour , IHealthBarComponent
     {
+    #region Public Variables
+        public float FillAmount { get; private set; }
+
+    #endregion
+
     #region Private Variables
 
-        public int MAX   { get; private set; }
-        public int Value { get; private set; }
+        [SerializeField]
+        private Image _image;
 
     #endregion
 
     #region Public Methods
 
-        public float GetAmount() => Value / (float)MAX;
-
-        public int GetMax() => MAX;
-
-        public void SetCurrentValue(int value) => Value = value;
-
-        public void SetMax(int amount) => MAX = amount;
+        public void DisplayHealth(int amount , int maxValue)
+        {
+            FillAmount        = (float)amount / (float)maxValue;
+            _image.fillAmount = FillAmount;
+        }
 
     #endregion
     }

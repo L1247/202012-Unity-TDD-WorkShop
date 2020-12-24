@@ -33,23 +33,19 @@ namespace Tests.UI.Elements
     #region Test Methods
 
         [Test]
-        public void GetMax()
+        [TestCase(100,100,1f)]
+        [TestCase(100,200,0.5f)]
+        [TestCase(0,200,0f)]
+        public void DisplayHealth(int amount , int maxValue , float expected)
         {
-            SetMax();
-            var healthBarMax = _healthBarComponent.GetMax();
-            Assert.AreEqual(_max , healthBarMax);
+            _healthBarComponent.DisplayHealth(amount,maxValue);
+            FillAmountShouldBe(expected);
         }
 
-        [Test]
-        public void GetFillAmount()
+        private void FillAmountShouldBe(float expected)
         {
-            SetMax();
-            _healthBarComponent.SetCurrentValue(50);
-            var amount = _healthBarComponent.GetAmount();
-            Assert.AreEqual(0.5f , amount);
+            Assert.AreEqual(expected , _healthBarComponent.FillAmount);
         }
-
-        private void SetMax() => _healthBarComponent.SetMax(_max);
 
     #endregion
     }
