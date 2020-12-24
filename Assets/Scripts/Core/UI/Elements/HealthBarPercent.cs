@@ -15,8 +15,9 @@ namespace Core.UI.Elements
         public override void DisplayHealth(int amount , int maxValue)
         {
             base.DisplayHealth(amount , maxValue);
-            _tmpTextCount.text = $"X {amount        / 100}";
             var percent = (float)amount / maxValue * 100;
+            var count   = amount                   / 100;
+            _tmpTextCount.text   = $"X {count}";
             _tmpTextPercent.text = $"{percent}%";
         }
     }
