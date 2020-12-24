@@ -9,14 +9,14 @@ namespace Core.UI.Elements
     {
     #region Public Variables
 
-        public float FillAmount { get; private set; }
+        public float FillAmount { get; protected set; }
 
     #endregion
 
     #region Private Variables
 
         [SerializeField]
-        private Image _image;
+        protected Image _image;
 
     #endregion
 
