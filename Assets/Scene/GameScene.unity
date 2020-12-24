@@ -1054,6 +1054,7 @@ MonoBehaviour:
   - {fileID: 1846534633}
   - {fileID: 4069264220970968592}
   - {fileID: 5063014209886293994}
+  _maxHp: 200
 --- !u!1001 &514107181404501620
 PrefabInstance:
   m_ObjectHideFlags: 0
