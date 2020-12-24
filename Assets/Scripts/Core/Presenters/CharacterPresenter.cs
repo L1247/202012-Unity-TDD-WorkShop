@@ -17,16 +17,18 @@ namespace Core.Presenters
         [SerializeReference]
         private List<HealthBarComponent> _healthBarComponents = new List<HealthBarComponent>();
 
+        [SerializeField]
+        private int _maxHp = 100;
+
         private void Start()
         {
-            var maxHp     = 100;
-            var character = new Character.Character(maxHp);
+            var character = new Character.Character(_maxHp);
             character.CurrentHp
                      .Subscribe(_ =>
                      {
                          _healthBarComponents
                              .ForEach(healthComp =>
-                                          healthComp.DisplayHealth(character.GetHp() , maxHp));
+                                          healthComp.DisplayHealth(character.GetHp() , _maxHp));
                      });
             buttonHurt.OnClickAsObservable()
                       .Subscribe(_ => character.TakeDamage(10));

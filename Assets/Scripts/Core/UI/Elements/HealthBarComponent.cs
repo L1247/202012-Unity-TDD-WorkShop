@@ -8,6 +8,7 @@ namespace Core.UI.Elements
     public class HealthBarComponent : MonoBehaviour , IHealthBarComponent
     {
     #region Public Variables
+
         public float FillAmount { get; private set; }
 
     #endregion
@@ -21,7 +22,7 @@ namespace Core.UI.Elements
 
     #region Public Methods
 
-        public void DisplayHealth(int amount , int maxValue)
+        public virtual void DisplayHealth(int amount , int maxValue)
         {
             FillAmount        = (float)amount / (float)maxValue;
             _image.fillAmount = FillAmount;
